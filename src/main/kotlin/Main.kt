@@ -7,44 +7,54 @@ val list = ArrayList<Date>()
 
 fun main(args: Array<String>) {
 
-    val listTwo = ArrayList<Calendar>()
-    val calOnew = removeTime(Calendar.getInstance())
+    val list = ArrayList<Calendar>()
+    val calOne = removeTime(Calendar.getInstance())
     val calTwo = removeTime(Calendar.getInstance())
-    val cal3 = removeTime(Calendar.getInstance())
-    val cal4 = removeTime(Calendar.getInstance())
-    val cal5 = removeTime(Calendar.getInstance())
-    val cal6 = removeTime(Calendar.getInstance())
-    val cal7 = removeTime(Calendar.getInstance())
-
-// 25
-    cal6[Calendar.HOUR_OF_DAY] = 16
-    cal6[Calendar.DAY_OF_MONTH] = 25
-    cal7[Calendar.HOUR_OF_DAY] = 17
-    cal7[Calendar.DAY_OF_MONTH] = 25
-// today
-    cal5[Calendar.HOUR_OF_DAY] = 15
-    cal3[Calendar.HOUR_OF_DAY] = 19
-    calOnew[Calendar.HOUR_OF_DAY] = 20
-    calTwo[Calendar.HOUR_OF_DAY] = 21
-    cal4[Calendar.HOUR_OF_DAY] = 23
+    val calFour = removeTime(Calendar.getInstance())
+    val calSix = removeTime(Calendar.getInstance())
+    val calSeven = removeTime(Calendar.getInstance())
 
 
+    calSix[Calendar.HOUR_OF_DAY] = 16
+    calSix[Calendar.DAY_OF_MONTH] = 25
+    calSix[Calendar.MONTH] = 6
 
+    calSeven[Calendar.HOUR_OF_DAY] = 17
+    calSeven[Calendar.MONTH] = 6
+    calSeven[Calendar.DAY_OF_MONTH] = 25
 
-    listTwo.add(cal6)
-    listTwo.add(calOnew)
-    listTwo.add(calTwo)
-    listTwo.add(cal3)
-    listTwo.add(cal4)
-    listTwo.add(cal5)
-    listTwo.add(cal7)
-    val listPair = associationCalendar(listTwo)
+    calFour[Calendar.HOUR_OF_DAY] = 15
+    calFour[Calendar.DAY_OF_MONTH] = 20
+    calFour[Calendar.MONTH] = 6
+
+    calTwo[Calendar.HOUR_OF_DAY] = 19
+    calTwo[Calendar.DAY_OF_MONTH] = 20
+    calTwo[Calendar.MONTH] = 6
+
+    calOne[Calendar.HOUR_OF_DAY] = 20
+    calOne[Calendar.DAY_OF_MONTH] = 20
+    calOne[Calendar.MONTH] = 6
+
+    list.add(calOne)
+    list.add(calTwo)
+    list.add(calFour)
+    list.add(calSix)
+    list.add(calSeven)
+
+    val listPair = associationCalendar(list)
     for (i in listPair) {
         println(i.first[Calendar.DAY_OF_MONTH])
         println(i.second)
     }
-
 }
+
+
+
+
+
+
+
+
 
 fun addCalandar(list: ArrayList<CalendarCen>): ArrayList<CalendarCen> {
     val calOne = if (list.isNotEmpty()) {
